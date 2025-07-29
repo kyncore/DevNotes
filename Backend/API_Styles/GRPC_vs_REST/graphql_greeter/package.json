@@ -1,0 +1,14 @@
+{
+  "name": "graphql_greeter",
+  "version": "1.0.0",
+  "description": "A simple GraphQL Greeter service.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.0"
+  }
+}
