@@ -1,0 +1,15 @@
+{
+    "name": "guestbook/functional",
+    "description": "A simple guestbook application using a Functional approach.",
+    "autoload": {
+        "files": [
+            "src/Database.php",
+            "src/Comments.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Gemini"
+        }
+    ]
+}

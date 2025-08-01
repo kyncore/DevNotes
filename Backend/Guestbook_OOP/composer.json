@@ -1,0 +1,14 @@
+{
+    "name": "guestbook/oop",
+    "description": "A simple guestbook application using an OOP approach.",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gemini"
+        }
+    ]
+}
