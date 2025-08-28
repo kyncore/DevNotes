@@ -1,0 +1,31 @@
+name: Verify Merged to Staging
+
+on:
+  workflow_call:
+    outputs:
+      allowed:
+        description: "Whether the PR branch is merged into staging"
+        value: ${{ jobs.verify.outputs.allowed }}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+    steps:
+      - name: Check if PR branch is merged into staging
+        id: check
+        run: |
+          git clone --depth=1 https://github.com/${{ github.repository }} repo
+          cd repo
+          git fetch origin ${{ github.head_ref }}
+          git fetch origin staging
+
+          if git merge-base --is-ancestor origin/${{ github.head_ref }} origin/staging; then
+            echo "✅ PR branch is already merged into staging."
+            echo "allowed=true" >> $GITHUB_OUTPUT
+          else
+            echo "::error::❌ Your PR branch is **not** merged into staging. Please merge it into 'staging' first."
+            echo "allowed=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi

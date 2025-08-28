@@ -1,0 +1,32 @@
+name: Testing dockerbuild
+on:
+  workflow_call:
+    inputs:
+      event_name:
+        required: true
+        type: string
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  dockerbuild:
+    name: dockerbuild
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '7.4', '8.0', '8.1', '8.2', '8.3', '8.4' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build docker image
+        uses: ./.github/actions/dockerbuild
+        with:
+          php-version: ${{ matrix.php }}
+          cache-to: type=gha,mode=max,ignore-error=true,scope=php-${{ matrix.php }}
