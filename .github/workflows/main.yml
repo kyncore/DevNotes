@@ -19,12 +19,7 @@ on:
       - '**'
       - '!*.md'
 jobs:
-  verify-merged-to-staging:
-    if: github.event_name == 'pull_request'
-    uses: ./.github/workflows/verify-merged-to-staging.yml
-
   dockerbuild:
-    needs: verify-merged-to-staging
     with:
       event_name: ${{ github.event_name }}
     uses: ./.github/workflows/dockerbuild.yml
