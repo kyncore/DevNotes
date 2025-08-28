@@ -1,3 +1,4 @@
 <?php
 
-echo 'Testing'
+echo 'Testing';
+echo "Second";
