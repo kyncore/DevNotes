@@ -1,4 +1,4 @@
-ARG PHP_VERSION_TAG=8.4.7
+ARG PHP_VERSION_TAG=7.4
 ARG TAG=${PHP_VERSION_TAG}-apache
 FROM php:${TAG}
 
@@ -24,7 +24,6 @@ RUN sed -i '/jessie-updates/d' /etc/apt/sources.list # for jessie
 # ext-pgsql: libpq-dev
 # ext-zip: libzip-dev zlib1g-dev
 # ext-opcache: libpcre3-dev
-
 RUN apt-get update \
     && apt-get install -y ${FORCE_YES} \
         git unzip curl apt-transport-https gnupg wget ca-certificates bc \
@@ -56,8 +55,8 @@ RUN mkdir -p ${APACHE_DOCUMENT_ROOT} \
 
 # see https://stackoverflow.com/questions/73294020/docker-couldnt-create-the-mpm-accept-mutex/73303983#73303983
 RUN echo "Mutex posixsem" >> /etc/apache2/apache2.conf
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-# COPY dockerbuild/docker-php-entrypoint /usr/local/bin/
+
+COPY dockerbuild/docker-php-entrypoint /usr/local/bin/
 
 ## Enable SSL
 RUN a2enmod ssl rewrite headers
@@ -66,14 +65,13 @@ EXPOSE 443
 
 WORKDIR ${ECCUBE_PREFIX}
 
-# COPY dockerbuild/wait-for-*.sh /
-# RUN chmod +x /wait-for-*.sh
+COPY dockerbuild/wait-for-*.sh /
+RUN chmod +x /wait-for-*.sh
 
-# COPY composer.json ${ECCUBE_PREFIX}/composer.json
-# COPY composer.lock ${ECCUBE_PREFIX}/composer.lock
+COPY composer.json ${ECCUBE_PREFIX}/composer.json
+COPY composer.lock ${ECCUBE_PREFIX}/composer.lock
 
 RUN composer install --no-scripts --no-autoloader --no-dev -d ${ECCUBE_PREFIX}
 
-# COPY . ${ECCUBE_PREFIX}
-RUN chown -R www-data:www-data /var/www/app/*
+COPY . ${ECCUBE_PREFIX}
 RUN composer dumpautoload -o
