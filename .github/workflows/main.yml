@@ -1,4 +1,7 @@
 name: CI/CD for EC-CUBE
+permissions:
+  packages: write
+  contents: read
 
 on:
   push:
