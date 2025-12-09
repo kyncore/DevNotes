@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="converted" content="2025-12-09T08:49:51.044Z">
+<title>Full Stack Engineer Laravel 3 Day Prep</title>
+<link rel="stylesheet" href="notes.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Full Stack Engineer Laravel 3 Day Prep</h1>
+        <p class="meta">Converted from <code>Full_Stack_Engineer_Laravel_3_Day_Prep.md</code> on 2025-12-09T08:49:51.044Z</p>
+        <article class="markdown">
+<h3>3-Day Interview Preparation Plan: Full Stack Engineer (Laravel)</h3>
+<p>This plan prioritizes core skills and efficient learning for a tight deadline.
+</p>
+<p>**General Tips for All Days:**
+</p>
+<ul>
+<li>**Active Recall:** Don&#x27;t just read. Explain concepts out loud as if you&#x27;re teaching someone.</li>
+<li>**Hands-on (Brief):** If a concept feels fuzzy, quickly spin up a small Laravel or frontend project to test it out.</li>
+<li>**Review Your Own Code:** Look at past projects where you implemented these concepts.</li>
+<li>**Prepare Questions:** Have 2-3 intelligent questions ready to ask the interviewer about the team, technology, or company culture.</li>
+<li>**STAR Method:** For behavioral questions, use the STAR (Situation, Task, Action, Result) method to structure your answers.</li>
+</ul>
+<hr>
+<h4>**Day 1: Laravel &amp; PHP Deep Dive (Focus: Backend Strength)**</h4>
+<p>**Goal:** Solidify your understanding of Laravel&#x27;s core, API development, and PHP best practices.
+</p>
+<p>**Morning (4-5 hours): Laravel Fundamentals &amp; Architecture**
+</p>
+<ol>
+<li>**Request Lifecycle:** Understand <code>public/index.php</code>, HTTP Kernel, Middleware (global, route), Service Providers, and the Container. (Refer to Laravel Docs &amp; Laracasts).</li>
+<li>**Routing:** Review basic routing, route parameters, named routes, route groups, and API routing.</li>
+<li>**Controllers &amp; Requests:** How to handle incoming requests, validation, and returning responses.</li>
+<li>**Eloquent ORM:**</li>
+<p>    *   **Models &amp; Migrations:** Creating models, defining table schemas.
+    *   **CRUD Operations:** Basic <code>create</code>, <code>read</code>, <code>update</code>, <code>delete</code>.
+    *   **Relationships:** One-to-one, one-to-many, many-to-many (and how to define them).
+    *   **Eager Loading (<code>with()</code>):** Crucial for performance (N+1 problem).
+    *   **Accessors &amp; Mutators:** Briefly review.
+<li>**Middleware:** Purpose and how to create/apply custom middleware.</li>
+</ol>
+</p>
+<p>**Afternoon (3-4 hours): API Development &amp; PHP Best Practices**
+</p>
+<ol>
+<li>**Authentication &amp; Authorization (APIs):**</li>
+<p>    *   **Laravel Sanctum:** Understand how it works for SPA and API token authentication.
+    *   **Gates &amp; Policies:** How to define and use them for granular authorization.
+<li>**RESTful API Design:** Principles of REST, HTTP verbs, status codes, resource naming.</li>
+<li>**Dependency Injection &amp; Service Container:** Understand the &quot;why&quot; and &quot;how&quot; of DI in Laravel.</li>
+<li>**PHP OOP:** Review core concepts: Classes, Objects, Inheritance, Polymorphism, Encapsulation, Interfaces, Traits, Abstract Classes.</li>
+<li>**Testing (Laravel):**</li>
+    *   **Unit vs. Feature Tests:** Understand the difference.
+    *   **Basic Feature Testing:** How to write tests for API endpoints using Laravel&#x27;s testing utilities.
+</ol>
+</p>
+<p>**Evening (1-2 hours): Practice &amp; Review**
+</p>
+<ul>
+<li>Review the Laravel/PHP questions and answers from the generated list.</li>
+<li>Mentally walk through how you&#x27;d implement a simple API endpoint with authentication and authorization.</li>
+</ul>
+<hr>
+<h4>**Day 2: Frontend &amp; Database Optimization (Focus: Full-Stack Balance)**</h4>
+<p>**Goal:** Strengthen your chosen frontend framework and master MySQL database design and optimization.
+</p>
+<p>**Morning (4-5 hours): Frontend Deep Dive (Choose ONE: Vue.js OR React/Next.js)**
+</p>
+<ul>
+<li>**If you are stronger in React/Next.js:**</li>
+<p>    1.  **React Fundamentals:** Components (functional), Props, State (<code>useState</code>, <code>useReducer</code>).
+    2.  **Hooks:** <code>useEffect</code>, <code>useContext</code>, custom hooks.
+    3.  **State Management:** Context API for simpler cases, understand the *concept* of Redux/Zustand/Recoil.
+    4.  **Next.js Specifics:** SSR, SSG, Data Fetching (<code>getServerSideProps</code>, <code>getStaticProps</code>), API Routes, File-system Routing.
+    5.  **Component Lifecycle:** Understand when effects run and components re-render.
+<li>**If you are stronger in Vue.js:**</li>
+    1.  **Vue Fundamentals:** Components (Options API vs. Composition API), Props, Data, Computed Properties, Watchers.
+    2.  **Lifecycle Hooks:** <code>onMounted</code>, <code>onUpdated</code>, <code>onUnmounted</code>.
+    3.  **State Management:** Pinia (how to define stores, state, getters, actions).
+    4.  **Vue Router:** Basic routing, route parameters.
+    5.  **Reusable Components:** Principles of building modular and reusable UI components.
+</ul>
+</p>
+<p>**Afternoon (3-4 hours): MySQL Database Design &amp; Optimization**
+</p>
+<ol>
+<li>**Database Design:**</li>
+<p>    *   **Normalization:** 1NF, 2NF, 3NF (understand the principles, not just definitions).
+    *   **Relationships:** One-to-one, one-to-many, many-to-many.
+    *   **Data Types:** Choosing appropriate types for columns.
+<li>**Data Integrity:**</li>
+    *   **Foreign Keys:** Importance and how they enforce referential integrity.
+    *   **Constraints:** <code>NOT NULL</code>, <code>UNIQUE</code>, <code>CHECK</code>.
+    *   **Transactions:** ACID properties, <code>BEGIN</code>, <code>COMMIT</code>, <code>ROLLBACK</code>.
+<li>**Query Optimization:**</li>
+    *   **Indexing:** When and where to create indexes (primary, unique, composite).
+    *   **<code>EXPLAIN</code>:** How to use it to analyze query performance and identify bottlenecks.
+    *   **Avoiding <code>SELECT *</code>:** Only select necessary columns.
+    *   **Joins vs. Subqueries:** When to use each.
+    *   **Pagination:** Using <code>LIMIT</code> and <code>OFFSET</code>.
+<li>**Security:** Basic SQL injection prevention (Laravel&#x27;s Eloquent/Query Builder handles much of this, but understand the threat).</li>
+</ol>
+</p>
+<p>**Evening (1-2 hours): Practice &amp; Review**
+</p>
+<ul>
+<li>Review the Frontend and Database questions and answers.</li>
+<li>Think about how you&#x27;d design a database schema for a simple application (e.g., a blog, an e-commerce product catalog).</li>
+<li>Practice explaining a complex frontend concept (e.g., state management, component lifecycle).</li>
+</ul>
+<hr>
+<h4>**Day 3: System Design, Desirable Skills &amp; Mock Interview (Focus: Breadth &amp; Confidence)**</h4>
+<p>**Goal:** Prepare for broader architectural questions, briefly touch on desirable skills, and build confidence through practice.
+</p>
+<p>**Morning (3-4 hours): System Design &amp; Architecture**
+</p>
+<ol>
+<li>**Scalability &amp; Reliability:**</li>
+<p>    *   **Load Balancing:** Basic understanding.
+    *   **Caching:** Different levels (database, application, CDN).
+    *   **Queues:** When and why to use message queues (e.g., for background jobs).
+    *   **Database Scaling:** Read replicas, sharding (high-level concepts).
+<li>**API Design Principles:** Versioning, error handling, rate limiting.</li>
+<li>**Microservices vs. Monolith:** Understand the trade-offs.</li>
+<li>**Security Best Practices:** OWASP Top 10 (high-level awareness), input validation, secure authentication.</li>
+</ol>
+</p>
+<p>**Afternoon (3-4 hours): Desirable Skills (High-Level Overview) &amp; Coding Practice**
+</p>
+<ol>
+<li>**Docker:** What it is, why it&#x27;s used (containerization, consistent environments).</li>
+<li>**CI/CD:** Understand the concepts of Continuous Integration and Continuous Deployment, and their benefits. Be able to name common tools (GitHub Actions, GitLab CI).</li>
+<li>**AWS Services (High-Level):**</li>
+<p>    *   **EC2:** Virtual servers.
+    *   **S3:** Object storage.
+    *   **Lambda:** Serverless functions.
+    *   **API Gateway:** Managing API access.
+    *   Understand *why* these are used in a full-stack context.
+<li>**GraphQL:** What it is, how it differs from REST (single endpoint, client-driven data fetching).</li>
+<li>**Testing Strategies (Beyond Unit):** Briefly understand contract, integration, load, and smoke testing.</li>
+<li>**AI Tools:** Be ready to discuss your experience (if any) with AI tools for coding/testing.</li>
+<li>**Coding Practice:**</li>
+    *   Solve 1-2 easy-to-medium algorithm/data structure problems (e.g., from LeetCode or HackerRank). Focus on explaining your thought process.
+    *   Mentally walk through a small full-stack coding challenge (e.g., &quot;build a simple to-do list API with a frontend&quot;).
+</ol>
+</p>
+<p>**Evening (2-3 hours): Mock Interview &amp; Final Review**
+</p>
+<ol>
+<li>**Self-Mock Interview:**</li>
+<p>    *   Go through *all* the generated interview questions and answer them out loud.
+    *   Record yourself if possible and listen back for clarity and conciseness.
+    *   Practice explaining your thought process for technical problems.
+<li>**Review:** Skim through your notes, the job description, and the reading list one last time.</li>
+<li>**Rest:** Get a good night&#x27;s sleep!</li>
+</ol>
+</p>
+<h2>Additional Interview Advice &amp; Topic Explanations</h2>
+<ul>
+<li>**Behavioral / Communication:** Use the STAR method (Situation, Task, Action, Result) and prepare 4–6 concise stories that show collaboration, ownership, debugging under pressure, and architecture influence. Practice explaining trade-offs and decisions clearly and ask clarifying questions during whiteboard/system-design prompts.</li>
+</ul>
+<ul>
+<li>**System Design / Architecture:** When asked to design a system, outline components (API, databases, cache, queues, load balancer), data flow, and failure modes; explain scaling strategies (read replicas, caching layers, background processing) and justify trade-offs.</li>
+</ul>
+<ul>
+<li>**Laravel Deep Dives to Be Ready For:** Explain the service container and dependency injection, how service providers and facades work, queues and workers, events/listeners, caching strategies (Redis), task scheduling, and testing strategies (unit, feature, integration). Be prepared to walk through a sample endpoint from request -&gt; controller -&gt; service -&gt; model -&gt; response and how you&#x27;d test and optimize it.</li>
+</ul>
+<ul>
+<li>**Frontend Talking Points:** For React/Next.js or Vue, be ready to explain SSR vs CSR, SSG/ISR, data fetching patterns, component design choices, state management rationale (Context/Redux/Pinia), and how you handle performance (code-splitting, memoization, lazy loading).</li>
+</ul>
+<ul>
+<li>**Database &amp; Performance:** Be ready to read an <code>EXPLAIN</code> plan, explain when to add composite indexes, discuss denormalization trade-offs, use of transactions, and strategies for long-running queries (pagination, background processing, caching).</li>
+</ul>
+<ul>
+<li>**DevOps &amp; Desirable Skills:** Describe a simple CI/CD flow (build → test → deploy), how Docker images are built and used in staging/production, cloud basics (S3 for assets, EC2 for servers, Lambda for small serverless jobs), and monitoring/logging approaches.</li>
+</ul>
+<ul>
+<li>**Practical Interview Tips:** During coding problems, communicate assumptions, outline your approach first, write clean code, add tests if time allows, and summarize complexity (time/space) at the end.</li>
+</ul>
+<p>(Keep these notes handy and tailor examples to your real experience during the interview.)
+</p>
+        </article>
+    </div>
+</body>
+</html>
