@@ -1,5 +1,3 @@
 <?php
 
-echo 'Testing';
-echo "Second";
-echo 'still can merge although trigger work well';
+echo 'Test with origin DOckerfile';

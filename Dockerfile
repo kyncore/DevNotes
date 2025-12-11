@@ -56,7 +56,7 @@ RUN mkdir -p ${APACHE_DOCUMENT_ROOT} \
 # see https://stackoverflow.com/questions/73294020/docker-couldnt-create-the-mpm-accept-mutex/73303983#73303983
 RUN echo "Mutex posixsem" >> /etc/apache2/apache2.conf
 
-COPY dockerbuild/docker-php-entrypoint /usr/local/bin/
+# COPY dockerbuild/docker-php-entrypoint /usr/local/bin/
 
 ## Enable SSL
 RUN a2enmod ssl rewrite headers
@@ -65,13 +65,13 @@ EXPOSE 443
 
 WORKDIR ${ECCUBE_PREFIX}
 
-COPY dockerbuild/wait-for-*.sh /
-RUN chmod +x /wait-for-*.sh
+# COPY dockerbuild/wait-for-*.sh /
+# RUN chmod +x /wait-for-*.sh
 
-COPY composer.json ${ECCUBE_PREFIX}/composer.json
-COPY composer.lock ${ECCUBE_PREFIX}/composer.lock
+# COPY composer.json ${ECCUBE_PREFIX}/composer.json
+# COPY composer.lock ${ECCUBE_PREFIX}/composer.lock
 
-RUN composer install --no-scripts --no-autoloader --no-dev -d ${ECCUBE_PREFIX}
+# RUN composer install --no-scripts --no-autoloader --no-dev -d ${ECCUBE_PREFIX}
 
-COPY . ${ECCUBE_PREFIX}
-RUN composer dumpautoload -o
+# COPY . ${ECCUBE_PREFIX}
+# RUN composer dumpautoload -o
